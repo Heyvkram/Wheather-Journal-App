@@ -88,7 +88,6 @@ class WeatherApp {
         let response = await fetch(apiUrl);
         try{
             this.serverResponse = await response.json()
-            console.log(":-)", this.serverResponse);
             this.dataStorage = {
                 temp: this.serverResponse.main.temp,
                 date: this.newDate,
