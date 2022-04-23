@@ -1,7 +1,7 @@
 
 class WeatherApp {
     constructor() {
-        this.apiKey = "bf5896126169a699ba63a4fbf1e7672a"
+        this.apiKey = "bf5896126169a699ba63a4fbf1e7672a&units=imperial"
         this.apiUrl = "https://api.openweathermap.org/data/2.5/weather?zip="
         this.dataStorage = null;
         this.newDate = null;
@@ -109,7 +109,7 @@ class WeatherApp {
 
     getTemperatureInCelsius(temp) {
         let celsius = (temp - 32) / 1.8;
-        let floatComma = (celsius / 10).toFixed(2);
+        let floatComma = celsius.toFixed(2);
         return floatComma;
     }
 
@@ -132,8 +132,7 @@ class WeatherApp {
         });
 
         try {
-            const newData = await response.json();
-            console.log(newData);
+            const newData = await response.json();            
             return newData;
           }catch(error) {
           console.log("error", error);

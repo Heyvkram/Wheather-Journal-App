@@ -1,4 +1,4 @@
-projectData = [];
+projectData = {};
 
 const http = require('http');
 const express = require('express');
@@ -22,8 +22,9 @@ app.post('/add', (req, res) => {
     date: req.body.date,
     temp: req.body.temp,
     content: req.body.content 
-  }
-  projectData.push(new_data);
+  }  
+
+  projectData[Date.now().toString()] = new_data;
 
   res.status(200).send({
     sucess: true,
