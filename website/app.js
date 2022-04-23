@@ -1,7 +1,7 @@
 
 class WeatherApp {
     constructor() {
-        this.apiKey = "bf5896126169a699ba63a4fbf1e7672a&units=imperial"
+        this.apiKey = "“your api key here&units=imperial"
         this.apiUrl = "https://api.openweathermap.org/data/2.5/weather?zip="
         this.dataStorage = null;
         this.newDate = null;
